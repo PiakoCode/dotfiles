@@ -1,0 +1,8 @@
+[user]
+	email = 1163312641@qq.com
+	name = Piako
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
