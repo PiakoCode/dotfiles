@@ -1,0 +1,10 @@
+[plugin]
+prepend_previewers = [
+  { name = "*.md", run = "glow" },
+]
+
+
+
+[manager]
+ratio = [2,3,3]
+linemode = "size"
