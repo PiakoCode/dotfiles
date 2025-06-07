@@ -5,6 +5,6 @@ prepend_previewers = [
 
 
 
-[manager]
+[mgr]
 ratio = [2,3,3]
 linemode = "size"
