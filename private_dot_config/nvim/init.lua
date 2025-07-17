@@ -16,8 +16,8 @@ vim.opt.clipboard = 'unnamedplus'       -- 启用系统剪切板
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.cmd('colorscheme vim')
---vim.cmd('colorscheme habamax')
+-- vim.cmd('colorscheme vim')
+vim.cmd('colorscheme habamax')
 
 
 -- 搜索相关设置

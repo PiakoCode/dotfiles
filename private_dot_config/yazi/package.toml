@@ -1,17 +1,17 @@
 [[plugin.deps]]
-use = "Reledia/glow"
-rev = "bd3eaa5"
-hash = "92b5c58159a51c567f82b618cee2b78"
-
-[[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "7c174cc"
+rev = "2ad42fa"
 hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "Ape/simple-status"
 rev = "d0da104"
 hash = "68603fdd1dcaf415227e2c77a9317947"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:piper"
+rev = "2ad42fa"
+hash = "2143a53182dbbe935a1abd1623424aa5"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
