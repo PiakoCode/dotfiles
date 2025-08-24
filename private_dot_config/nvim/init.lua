@@ -20,6 +20,8 @@ vim.opt.signcolumn = "auto"
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+
+
 -- vim.cmd('colorscheme vim')
 -- vim.cmd('colorscheme default')
 -- vim.cmd('colorscheme lunaperche')
@@ -43,13 +45,12 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 
-
 -- disable netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
+--
 -- 强制显示标签页
-vim.opt.showtabline = 2
+-- vim.opt.showtabline = 2
 
 
 -- 如果文件类型为lua, tab大小设置为2
@@ -70,6 +71,7 @@ vim.diagnostic.config({
 	underline = true, -- 显示波浪线
 })
 
+
 -- 先加载插件
 require("config.lazy")
 require("config.keymap")
@@ -78,18 +80,6 @@ require("config.keymap")
 -- https://martinlwx.github.io/zh-cn/config-neovim-from-scratch
 -- https://zhuanlan.zhihu.com/p/17683065207
 
+-- 默认快捷键
+-- 大写K 查看变量类型
 
---- https://github.com/folke/which-key.nvim
--- which key config to set desc infomation
--- need to load which-key.nvim plugin first
---local wk = require("which key")
-
--- wk.add({
--- 	{
--- 		mode = { "n", "v" },
--- 		-- 保存并退出全部缓冲区(buffer)
--- 		{ "<leader>x", "<cmd>xa<cr>", desc = "save and quit all" },
--- 		-- 若有未保存内容则先保存，然后退出当前缓冲区
--- 		{ "<leader>q", "<cmd>x<cr>", desc = "save and quit" },
--- 	},
--- })

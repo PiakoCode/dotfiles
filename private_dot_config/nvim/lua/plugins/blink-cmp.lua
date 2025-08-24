@@ -3,7 +3,7 @@ return {
 	"saghen/blink.cmp",
 	-- optional: provides snippets for the snippet source
 	dependencies = { "rafamadriz/friendly-snippets" },
-  
+
 	-- use a release tag to download pre-built binaries
 	version = "*",
 	-- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
@@ -37,6 +37,7 @@ return {
 			["<C-f>"] = { "scroll_documentation_down", "fallback" },
 			-- Show/hide signature
 			["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
+
 		},
 
 		appearance = {
@@ -49,8 +50,7 @@ return {
 			-- `lsp`, `buffer`, `snippets`, `path`, and `omni` are built-in
 			-- so you don't need to define them in `sources.providers`
 			default = { "lsp", "path", "snippets", "buffer" },
-
-			-- Sources are configured via the sources.providers table
+       
 		},
 
 		-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance

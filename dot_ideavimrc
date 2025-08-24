@@ -12,7 +12,10 @@ set scrolloff=5
 " Do incremental searching.
 set incsearch
 
-" Don't use Ex mode, use Q for formatting.
+" The shell to use to execute commands with ! and :!
+set shell
+
+" Qba'g hfr Rk zbqr, hfr D sbe sbeznggvat.
 map Q gq
 
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
@@ -44,3 +47,17 @@ set visualbell
 
 " 相对行数
 set relativenumber
+
+" 使用系统剪切板
+set clipboard=unnamed
+
+
+" Case-insensitive searching
+set ignorecase
+set smartcase
+
+let mapleader = " "
+
+" 代码格式化
+map <leader>f <Action>(ReformatCode)
+" vmap <leader>f <Action>(ReformatCode)

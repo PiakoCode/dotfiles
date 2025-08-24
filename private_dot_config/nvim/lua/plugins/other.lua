@@ -5,72 +5,53 @@ return {
 		event = "VeryLazy",
 		config = function()
 			require("which-key").setup()
-
 		end,
 	},
 
 	-- 图标
-	{ "nvim-tree/nvim-web-devicons", lazy = true },
+	{ "nvim-tree/nvim-web-devicons", 
+  --lazy = true 
+  },
 
-	-- buffer 栏
+
+	-- -- Tab 状态栏
 	-- {
-	-- 	'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons',
-	--
-	--    config = function()
-	-- 		require("bufferline").setup({
-	-- 			-- options = {
-	-- 			-- 	-- 使用 nvim 内置lsp
-	-- 			-- 	diagnostics = "nvim_lsp",
-	-- 			-- 	-- 左侧让出 nvim-tree 的位置
-	-- 			-- 	offsets = {
-	-- 			-- 		{
-	-- 			-- 			text = "File Explorer",
-	-- 			-- 			highlight = "Directory",
-	-- 			-- 			text_align = "left",
-	-- 			-- 		},
-	-- 			-- 	},
-	-- 			-- },
+	-- 	"nanozuki/tabby.nvim",
+	-- 	---@type TabbyConfig
+	-- 	opts = {
+	-- 		-- configs...
+	-- 	},
+	-- 	config = function()
+	-- 		require("tabby").setup({
+	-- 			preset = "active_wins_at_tail",
+	-- 			option = {
+	-- 				theme = {
+	-- 					fill = "TabLineFill", -- tabline background
+	-- 					head = "TabLine", -- head element highlight
+	-- 					current_tab = "TabLineSel", -- current tab label highlight
+	-- 					tab = "TabLine", -- other tab label highlight
+	-- 					win = "TabLine", -- window highlight
+	-- 					tail = "TabLine", -- tail element highlight
+	-- 				},
+	-- 				nerdfont = true, -- whether use nerdfont
+	-- 				lualine_theme = nil, -- lualine theme name
+	-- 				tab_name = {
+	-- 					name_fallback = function(tabid)
+	-- 						return tabid
+	-- 					end,
+	-- 				},
+	-- 				buf_name = {
+	-- 					mode = "unique", -- or 'relative', 'tail', 'shorten'
+	-- 				},
+	-- 			},
 	-- 		})
 	-- 	end,
 	-- },
 	--
-	-- Tab 状态栏
-	{
-		"nanozuki/tabby.nvim",
-		---@type TabbyConfig
-		opts = {
-			-- configs...
-		},
-		config = function()
-			require("tabby").setup({
-				preset = "active_wins_at_tail",
-				option = {
-					theme = {
-						fill = "TabLineFill", -- tabline background
-						head = "TabLine", -- head element highlight
-						current_tab = "TabLineSel", -- current tab label highlight
-						tab = "TabLine", -- other tab label highlight
-						win = "TabLine", -- window highlight
-						tail = "TabLine", -- tail element highlight
-					},
-					nerdfont = true, -- whether use nerdfont
-					lualine_theme = nil, -- lualine theme name
-					tab_name = {
-						name_fallback = function(tabid)
-							return tabid
-						end,
-					},
-					buf_name = {
-						mode = "unique", -- or 'relative', 'tail', 'shorten'
-					},
-				},
-			})
-		end,
-	},
-
 	-- 状态栏
 	{
 		"nvim-lualine/lualine.nvim",
+    lazy=false,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
 			{ "<Leader>b", "<Cmd>BufferLineCycleNext<CR>", desc = "Cycle to next buffer" },
@@ -135,14 +116,12 @@ return {
 		end,
 	},
 
-	-- 终端
-	{
-		-- amongst your other plugins
-		{ "akinsho/toggleterm.nvim", version = "*", config = true },
-		-- or
-		-- {'akinsho/toggleterm.nvim', version = "*", opts = {--[[ things you want to change go here]]}}
-	},
-
+	-- -- 终端
+	-- {
+	-- 	-- amongst your other plugins
+	-- 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+	-- },
+	--
 	-- lazygit
 	{
 		"kdheepak/lazygit.nvim",

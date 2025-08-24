@@ -39,16 +39,45 @@ return {
 			},
 			quickfile = { enabled = true },
 			statuscolumn = { enabled = true },
-
+			terminal = {
+				bo = {
+					filetype = "snacks_terminal",
+				},
+				wo = {},
+				keys = {
+					q = "hide",
+					gf = function(self)
+						local f = vim.fn.findfile(vim.fn.expand("<cfile>"), "**")
+						if f == "" then
+							Snacks.notify.warn("No file under cursor")
+						else
+							self:hide()
+							vim.schedule(function()
+								vim.cmd("e " .. f)
+							end)
+						end
+					end,
+					term_normal = {
+						"<esc>",
+						function(self)
+							self.esc_timer = self.esc_timer or (vim.uv or vim.loop).new_timer()
+							if self.esc_timer:is_active() then
+								self.esc_timer:stop()
+								vim.cmd("stopinsert")
+							else
+								self.esc_timer:start(200, 0, function() end)
+								return "<esc>"
+							end
+						end,
+						mode = "t",
+						expr = true,
+						desc = "Double escape to normal mode,两次esc回到normal模式",
+					},
+				},
+			},
 			scope = { enabled = true },
 			scroll = { enabled = true },
 			words = { enabled = true },
-			image = {
-				enabled = false,
-				math = {
-					enabled = false, -- enable math expression rendering
-				},
-			},
 		},
 		keys = {
 			-- Smart Find Files
@@ -74,6 +103,14 @@ return {
 				end,
 				desc = "Find Files",
 			},
+			{
+				"<leader>fc",
+				function()
+					Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
+				end,
+				desc = "Find Config File",
+			},
+
 			{
 				"<leader>fr",
 				function()
@@ -101,11 +138,18 @@ return {
 			{
 				"<c-/>",
 				function()
-					Snacks.terminal()
+					Snacks.terminal.toggle()
 				end,
 				desc = "Toggle Terminal",
 			},
-
+			-- {
+			-- 	"<c-Enter>",
+			-- 	function()
+			-- 		Snacks.terminal.open()
+			-- 	end,
+			-- 	desc = "Toggle Terminal",
+			-- },
+			--
 			-- 查找
 			{
 				"<leader>sh",

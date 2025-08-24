@@ -14,7 +14,7 @@ return {
 		{ "<C-A-b>", "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
 		{ "<leader>e", "<cmd>NvimTreeFocus<CR>", desc = "Focus NvimTree" },
 		{ "<leader>n", "<cmd>NvimTreeFindFile<CR>", desc = "Find current file in NvimTree" },
-		{ "<leader>c", "<cmd>NvimTreeCollapse<CR>", desc = "Collapse NvimTree" },
+		{ "<leader>cn", "<cmd>NvimTreeCollapse<CR>", desc = "Collapse NvimTree" },
 	},
 
 	config = function()

@@ -23,8 +23,11 @@ map("n", "<Leader>w", "<C-w>", opt)
 map("n", "<Leader>x", ":xa<CR>", opt)
 map("v", "<Leader>x", ":xa<CR>", opt)
 
-map("t", "<Leader>x", ":xa<CR>", opt)
+-- map("t", "<Leader>x", ":xa<CR>", opt)
 
 map("n", "<Leader>q", ":x<CR>", opt)
 map("v", "<Leader>q", ":x<CR>", opt)
-map("t", "<Leader>q", ":x<CR>", opt)
+-- map("t", "<Leader>q", ":x<CR>", opt)
+
+
+
