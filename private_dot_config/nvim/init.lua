@@ -1,3 +1,4 @@
+-- nvim 配置
 -- 基本设置
 vim.opt.number = true -- 显示行号
 vim.opt.relativenumber = true -- 显示相对行号
@@ -19,8 +20,6 @@ vim.opt.signcolumn = "auto"
 -- 设置 leader key 为空格
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
-
 
 -- vim.cmd('colorscheme vim')
 -- vim.cmd('colorscheme default')
@@ -52,14 +51,13 @@ vim.opt.softtabstop = 4
 -- 强制显示标签页
 -- vim.opt.showtabline = 2
 
-
 -- 如果文件类型为lua, tab大小设置为2
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "lua",
-  callback = function()
-    vim.opt_local.shiftwidth = 2
-    vim.opt_local.tabstop = 2
-  end,
+	pattern = "lua",
+	callback = function()
+		vim.opt_local.shiftwidth = 2
+		vim.opt_local.tabstop = 2
+	end,
 })
 
 -- 开启插入模式下的实时诊断， 但是可能会降低性能
@@ -71,7 +69,6 @@ vim.diagnostic.config({
 	underline = true, -- 显示波浪线
 })
 
-
 -- 先加载插件
 require("config.lazy")
 require("config.keymap")
@@ -82,4 +79,3 @@ require("config.keymap")
 
 -- 默认快捷键
 -- 大写K 查看变量类型
-

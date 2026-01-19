@@ -1,20 +1,19 @@
 [plugin]
-
-[[plugin.prepend_previewers]]
-name = "*.md"
-run  = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'
-
-
+prepend_previewers = [
+ # markdown 预览
+  { name = "*.md", run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' },
+]
 
 [mgr]
-ratio = [2,3,3]
+ratio = [2, 3, 3]
 linemode = "size"
 
 
 [preview]
-max_width=1000
-max_height=1000
+max_width = 1000
+max_height = 1000
 
 [tasks]
 # image_alloc=0
-image_bound=[10000,10000]
+image_bound = [10000, 10000]
+image_alloc = 1073741824     # = 1024*1024*1024 = 1024MB
